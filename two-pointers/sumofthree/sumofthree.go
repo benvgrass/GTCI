@@ -57,7 +57,7 @@ func main() {
 	targets := []int{2, 2, 31, 31}
 	var results []bool
 	for i, x := range tests {
-		results[i] = findSumOfThree(x, targets[i])
+		results = append(results, findSumOfThree(x, targets[i]))
 	}
 	fmt.Printf("%v", results)
 }
