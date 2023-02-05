@@ -53,13 +53,7 @@ func quickSort(arr []int, less func(i, j int) bool) {
 }
 
 func main() {
-	tests := [][]int{{1, -1, -1}, {1, -1, 1}, {1, 2, 4, 6, 8, 20}, {1, 3, 4, 6, 8, 20}}
-	targets := []int{2, 2, 31, 31}
-	var results []bool
-	for i, x := range tests {
-		results = append(results, findSumOfThree(x, targets[i]))
-	}
-	fmt.Printf("%v", results)
+
 }
 
 func greater(i int, j int) bool { return i > j }
