@@ -1,6 +1,10 @@
 package main
 
-import "testing"
+import (
+	"math/rand"
+	"sort"
+	"testing"
+)
 
 func TestFindSumOfThree(t *testing.T) {
 	tests := [][]int{{1, -1, -1}, {1, -1, 1}, {1, 2, 4, 6, 8, 20}, {1, 3, 4, 6, 8, 20}}
@@ -20,5 +24,31 @@ func TestFindSumOfThree(t *testing.T) {
 }
 
 func TestQuickSort(t *testing.T) {
+	const x = 10000
+	const y = 1000
+	const resultRange = 1000
+	var a [x][y]int
+	for i := 0; i < x; i++ {
+		for j := 0; j < y; j++ {
+			a[i][j] = rand.Int() % resultRange
+		}
+	}
+
+	var isSorted [x]bool
+	allTrue := true
+	notSorted := 0
+	for i := 0; i < x; i++ {
+		quickSort(a[i][:], greater)
+		isSorted[i] = sort.SliceIsSorted(a[i][:],
+			func(m, n int) bool { return a[i][m] > a[i][n] })
+		allTrue = allTrue && isSorted[i]
+		if !isSorted[i] {
+			notSorted++
+		}
+	}
+
+	if !allTrue {
+		t.Errorf("%v out of %v arrays were improperly sorted", notSorted, x)
+	}
 
 }
