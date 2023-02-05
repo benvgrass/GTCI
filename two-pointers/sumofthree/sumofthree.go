@@ -3,16 +3,21 @@ package main
 // insert starter code
 func findSumOfThree(nums []int, target int) bool {
 	quickSort(nums, greater) // step 1, sort the array
-	for idX, x := range nums {
-		if x < target {
-			for idY, y := range nums[idX+1:] {
-				xy := x + y
-				if xy < target {
-					for idZ := len(nums) - 1; idZ > idX+idY+1 && xy+nums[idZ] <= target; idZ-- {
-						if xy+nums[idZ] == target {
-							return true
-						}
-					}
+	for idX := 0; idX < len(nums)-2; idX++ {
+		x := nums[idX]
+		rest := nums[idX+1:]
+		highidx := 0
+		lowidx := len(rest) - 1
+		if x+rest[highidx]+rest[highidx+1] >= target &&
+			x+rest[lowidx]+rest[lowidx-1] <= target {
+			for lowidx > highidx {
+				sum := x + rest[highidx] + rest[lowidx]
+				if sum == target {
+					return true
+				} else if sum > target {
+					highidx++
+				} else {
+					lowidx--
 				}
 			}
 		}
