@@ -7,10 +7,13 @@ import (
 )
 
 func TestFindSumOfThree(t *testing.T) {
-	tests := [][]int{{1, -1, -1}, {1, -1, 1}, {1, 2, 4, 6, 8, 20}, {1, 3, 4, 6, 8, 20}}
-	targets := []int{2, 2, 31, 31}
+	tests := [][]int{{1, -1, -1}, {1, -1, 1},
+		{1, 2, 4, 6, 8, 20}, {1, 3, 4, 6, 8, 20},
+		{3, 7, 1, 2, 8, 4, 5}, {3, 7, 1, 2, 8, 4, 5}, {3, 7, 1, 2, 8, 4, 5},
+		{-1, 2, 1, -4, 5, -3}, {-1, 2, 1, -4, 5, -3}, {-1, 2, 1, -4, 5, -3}}
+	targets := []int{2, 2, 31, 31, 10, 20, 21, -8, 0, 7}
 	var actualResults []bool
-	expectedResults := []bool{false, false, false, true}
+	expectedResults := []bool{false, false, false, true, true, true, false, true, true, false}
 	passed := true
 	for i, x := range tests {
 		result := findSumOfThree(x, targets[i])
