@@ -1,11 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"math/rand"
-	"sort"
-)
-
 // insert starter code
 func findSumOfThree(nums []int, target int) bool {
 	quickSort(nums, greater) // step 1, sort the array
@@ -56,32 +50,4 @@ func main() {
 
 }
 
-func greater(i int, j int) bool { return i > j }
-
-func lazyCheckSort() {
-	const x = 5
-	const y = 5
-	const resultRange = 100
-	var a [x][y]int
-	for i := 0; i < x; i++ {
-		for j := 0; j < y; j++ {
-			a[i][j] = rand.Int() % resultRange
-		}
-	}
-	fmt.Printf("%v\n", a)
-
-	var isSorted [x]bool
-	allTrue := true
-	for i := 0; i < x; i++ {
-		quickSort(a[i][:], greater)
-		fmt.Printf("a: %v\n", a[i][:])
-		var result = sort.SliceIsSorted(a[i][:],
-			func(int1, int2 int) bool { return a[i][int1] > a[i][int2] })
-		fmt.Printf("%v\n", result)
-		isSorted[i] = result
-		allTrue = allTrue && isSorted[i]
-	}
-
-	fmt.Printf("%v\n%v\n%v", a, isSorted, allTrue)
-	fmt.Printf("All sorted? %v", allTrue)
-}
+func greater(a, b int) bool { return a > b }
