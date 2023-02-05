@@ -8,17 +8,31 @@ import (
 
 // insert starter code
 func findSumOfThree(nums []int, target int) bool {
-	quickSort(nums) // step 1
-	return true
+	quickSort(nums, greater) // step 1, sort the array
+	for idX, x := range nums {
+		if x < target {
+			for idY, y := range nums[idX+1:] {
+				xy := x + y
+				if xy < target {
+					for idZ := len(nums) - 1; idZ > idX+idY+1 && xy+nums[idZ] <= target; idZ-- {
+						if xy+nums[idZ] == target {
+							return true
+						}
+					}
+				}
+			}
+		}
+	}
+	return false
 }
 
-func quickSort(arr []int) {
+func quickSort(arr []int, less func(i, j int) bool) {
 	pivot := 0
 	end := len(arr) - 1
 
 	for pivot < end {
 		check := pivot + 1
-		if arr[pivot] < arr[check] {
+		if less(arr[pivot], arr[check]) {
 			if check != end {
 				arr[check], arr[end] = arr[end], arr[check]
 			}
@@ -30,17 +44,25 @@ func quickSort(arr []int) {
 	}
 
 	if pivot != 0 {
-		quickSort(arr[:pivot])
+		quickSort(arr[:pivot], less)
 	}
 
 	if pivot != len(arr)-1 {
-		quickSort(arr[pivot+1:])
+		quickSort(arr[pivot+1:], less)
 	}
 }
 
 func main() {
-	lazyCheckSort() // lazily check whether quicksort implementation works
+	tests := [][]int{{1, -1, -1}, {1, -1, 1}, {1, 2, 4, 6, 8, 20}, {1, 3, 4, 6, 8, 20}}
+	targets := []int{2, 2, 31, 31}
+	var results []bool
+	for i, x := range tests {
+		results[i] = findSumOfThree(x, targets[i])
+	}
+	fmt.Printf("%v", results)
 }
+
+func greater(i int, j int) bool { return i > j }
 
 func lazyCheckSort() {
 	const x = 10000
@@ -57,8 +79,8 @@ func lazyCheckSort() {
 	var isSorted [x]bool
 	allTrue := true
 	for i := 0; i < x; i++ {
-		quickSort(a[i][:])
-		isSorted[i] = sort.SliceIsSorted(a[i][:], func(i int, j int) bool { return i < j })
+		quickSort(a[i][:], greater)
+		isSorted[i] = sort.SliceIsSorted(a[i][:], greater)
 		allTrue = allTrue && isSorted[i]
 	}
 
