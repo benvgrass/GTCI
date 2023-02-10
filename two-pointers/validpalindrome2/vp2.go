@@ -1,6 +1,15 @@
 package main
 
 func validPalindrome(s string) bool {
-	// start with original vp algo and then change
-	return false
+	left := 0
+	right := len(s) - 1
+
+	for left <= right {
+		if s[left] != s[right] {
+			// skip and check
+		}
+		left++
+		right--
+	}
+	return true
 }
