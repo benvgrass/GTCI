@@ -12,7 +12,7 @@ func TestValidPalindrome(t *testing.T) {
 	}{
 		{"madame", true},
 		{"dead", true},
-		{"abca", false},
+		{"abca", true},
 		{"tebbem", false},
 		{"eeccccbebaeeabebccceea", false},
 		{"ognfjhgbjhzkqhzadmgqbwqsktzqwjexqvzjsopolnmvnymbbzoofzbbmynvmnloposjzvqxejwqztksqwbqgmdazhqkzhjbghjfno", false},

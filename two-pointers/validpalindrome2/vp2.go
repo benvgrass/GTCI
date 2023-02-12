@@ -5,7 +5,7 @@ func validPalindrome(s string) bool {
 	right := len(s) - 1
 	skipped := false
 
-	for left <= right {
+	for left < right {
 
 		if !skipped && s[left] != s[right] {
 			skipped = true
