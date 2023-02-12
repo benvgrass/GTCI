@@ -22,7 +22,7 @@ func TestValidPalindrome(t *testing.T) {
 		t.Run(fmt.Sprintf("ValidPalindromeII.%d", i), func(t *testing.T) {
 			res := validPalindrome(tc.input)
 			if res != tc.want {
-				t.Fatalf("actual %v; want %v", res, tc.want)
+				t.Fatalf("case:%v: actual %v; want %v\n\n", tc.input, res, tc.want)
 			} else {
 				t.Logf("Pass!")
 			}
