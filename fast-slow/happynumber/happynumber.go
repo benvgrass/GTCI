@@ -1,7 +1,16 @@
 package main
 
 func happyNumber(num int) bool {
-	// TODO
+	slow := num
+	fast := sumOfDigits(num)
+
+	for fast != 1 {
+		if slow == fast {
+			return false
+		}
+		slow = sumOfDigits(slow)
+		fast = sumOfDigits(sumOfDigits(fast))
+	}
 	return true
 }
 
