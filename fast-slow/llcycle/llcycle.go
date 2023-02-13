@@ -6,7 +6,10 @@ func detectCycle(head *EduLinkedListNode) bool {
 
 	for fast != nil {
 		slow = slow.next
-		fast = fast.next.next
+		fast = fast.next
+		if fast != nil {
+			fast = fast.next
+		}
 
 		if slow == fast {
 			return true
