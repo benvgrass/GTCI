@@ -11,7 +11,7 @@ func TestHappyNumber(t *testing.T) {
 		expected bool
 	}{
 		{2147483646, false},
-		{19, false},
+		{19, true},
 		{1, true},
 		{8, false},
 		{7, true},
