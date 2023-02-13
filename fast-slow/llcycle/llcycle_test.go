@@ -45,11 +45,5 @@ func createTestPair(list []int, cycle int) DetectCycleTestPair {
 		ll.InsertNodeAtHead(newNode)
 
 	}
-
-	var containsCycle bool
-	if cycle >= 0 {
-		containsCycle = true
-	}
-	return DetectCycleTestPair{ll.head, containsCycle}
-
+	return DetectCycleTestPair{ll.head, cycle >= 0}
 }
