@@ -24,7 +24,7 @@ func TestHappyNumber(t *testing.T) {
 		t.Run(fmt.Sprintf("HappyNumber.%d", i), func(t *testing.T) {
 			res := happyNumber(tc.input)
 			if res != tc.expected {
-				t.Fatalf("input:%v: expected %v; want %v", tc.input, res, tc.expected)
+				t.Fatalf("input:%v: actual %v; expected %v", tc.input, res, tc.expected)
 			} else {
 				t.Logf("Pass!")
 			}
@@ -55,7 +55,7 @@ func TestSumOfDigits(t *testing.T) {
 		t.Run(fmt.Sprintf("SumOfDigits.%d", i), func(t *testing.T) {
 			res := sumOfDigits(tc.input)
 			if res != tc.expected {
-				t.Fatalf("input:%v: expected %v; want %v", tc.input, res, tc.expected)
+				t.Fatalf("input:%v: actual %v; expected %v", tc.input, res, tc.expected)
 			} else {
 				t.Logf("Pass!")
 			}
