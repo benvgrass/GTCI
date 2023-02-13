@@ -33,16 +33,17 @@ func TestDetectCycle(t *testing.T) {
 
 func createTestPair(list []int, cycle int) DetectCycleTestPair {
 	ll := new(EduLinkedList)
-	var lastNode EduLinkedListNode
+	var lastNode *EduLinkedListNode
 	for i := len(list) - 1; i >= 0; i-- {
 		newNode := InitLinkedListNode(list[i])
-		ll.InsertNodeAtHead(newNode)
 		if i == len(list)-1 {
-			lastNode = *newNode
+			lastNode = newNode
 		}
 		if i == cycle {
 			lastNode.next = newNode
 		}
+		ll.InsertNodeAtHead(newNode)
+
 	}
 
 	var containsCycle bool
