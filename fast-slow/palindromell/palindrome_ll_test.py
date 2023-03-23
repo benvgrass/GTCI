@@ -6,5 +6,5 @@ from linked_list import LinkedList
 def test_palindrome(input, expected):
     ll = LinkedList()
     ll.create_linked_list(input)
-    assert palindrome(ll) == expected
+    assert palindrome(ll.head) == expected
 
