@@ -4,7 +4,7 @@ from repeated_dna import find_repeated_sequences
 
 @pytest.mark.parametrize("s, k, output", [
     ('AAAAACCCCCAAAAACCCCCC', 8, {'AAAAACCC', 'AAAACCCC', 'AAACCCCC'}),
-    ('GGGGGGGGGGGGGGGGGGGGGGGGG', 12, {'G'*12}),
+    ('GGGGGGGGGGGGGGGGGGGGGGGGG', 12, {'G' * 12}),
     ('TTTTTCCCCCCCTTTTTTCCCCCCCTTTTTTT', 10, {'TTTTTCCCCC', 'TTTTCCCCCC',
                                               'TTTCCCCCCC', 'TCCCCCCCTT',
                                               'TTCCCCCCCT', 'CCCCCCCTTT',
