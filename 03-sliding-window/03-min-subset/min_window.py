@@ -24,7 +24,8 @@ def min_window(str1, str2):
                     # if there's no min substring, or it's less than previous, set new min substring
                     if len(min_substr) == 0 or end - start < len(min_substr):
                         min_substr = str1[start:end]
-                        contains_substr = False
+                    idx_s2 = 0
+                    contains_substr = False  # now go back to processing forward from here
             start -= 1
 
     return min_substr
