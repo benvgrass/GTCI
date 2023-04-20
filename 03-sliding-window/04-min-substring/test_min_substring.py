@@ -1,5 +1,5 @@
 import pytest
-from min_substring import min_substring
+from min_substring import min_window
 
 
 # noinspection SpellCheckingInspection
@@ -11,4 +11,4 @@ from min_substring import min_substring
     ("ABDFGDCKAB", "ABCD", "DCKAB")
 ])
 def test_min_substring(s, t, expected):
-    assert min_substring(s, t) == expected
+    assert min_window(s, t) == expected
