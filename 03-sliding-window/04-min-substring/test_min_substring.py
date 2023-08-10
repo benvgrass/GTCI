@@ -4,7 +4,7 @@ from min_substring import min_window
 
 # noinspection SpellCheckingInspection
 @pytest.mark.parametrize("s,t,expected", [
-    ("ABC", "ABCD", "ABC"),
+    ("ABCD", "ABC", "ABC"),
     ("XYZYX", "XYZ", "XYZ"),
     ("ABXYZJKLSNFC", "ABC", "ABXYZJKLSNFC"),
     ("AAAAAAAAAAA", "A", "A"),
