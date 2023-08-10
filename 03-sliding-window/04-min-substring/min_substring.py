@@ -22,23 +22,23 @@ def min_window(s, t):
     while w_end < len(s) or is_substring():
         if incr:
             c = s[w_end]
+            w_end += 1
             if c in w_store:
                 w_store[c] += 1
                 if is_substring():
-                    if len(min_window) == 0 or w_end - w_start + 1 < len(min_window):
-                        min_window = s[w_start: w_end+1]
+                    if len(min_window) == 0 or w_end - w_start< len(min_window):
+                        min_window = s[w_start: w_end]
                     incr = False
-            w_end += 1
         else:
             c = s[w_start]
+            w_start += 1
             if c in w_store:
                 w_store[c] -= 1
-                if is_substring():
-                    if w_end - w_start + 1 < len(min_window):
-                        min_window = s[w_start: w_end+1]
-                else:
-                    incr = True
-            w_start += 1
+            if is_substring():
+                if w_end - w_start < len(min_window):
+                    min_window = s[w_start: w_end]
+            else:
+                incr = True
     return min_window
 
 
