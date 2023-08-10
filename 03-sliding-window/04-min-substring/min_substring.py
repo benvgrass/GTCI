@@ -31,6 +31,3 @@ def min_window(s, t):
                 w_store[c] -= 1
 
     return min_window_str
-
-
-
