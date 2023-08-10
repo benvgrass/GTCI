@@ -1,6 +1,6 @@
 def find_longest_substring(input_str):
     chars = {}
-    longest = -1
+    longest = 0
     start = 0
     end = 0
     len_input = len(input_str)
