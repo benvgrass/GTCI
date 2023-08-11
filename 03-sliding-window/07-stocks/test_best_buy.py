@@ -7,7 +7,8 @@ from best_buy import max_profit
     ([7, 1, 5, 3, 6, 4], 5),
     ([7, 6, 4, 3, 1], 0),
     ([2, 6, 8, 7, 8, 7, 9, 4, 1, 2, 4, 5, 8], 7),
-    ([1, 4, 2], 3)
+    ([1, 4, 2], 3),
+    ([1], 0)
 ])
 def test_max_profit(prices, expected):
     assert max_profit(prices) == expected
