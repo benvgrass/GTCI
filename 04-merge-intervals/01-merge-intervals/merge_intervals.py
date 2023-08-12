@@ -1,6 +1,11 @@
 def merge_intervals(intervals):
     # Replace this placeholder return statement with your code
-    result = []
+    result = [intervals.pop()]
+    for interval in intervals:
+        last_interval = result[-1]
+        if last_interval.end >= interval.start:
+            result[-1] = Interval(result[-1].start, max(result[-1].end, interval.end))
+
     return result
 
 
