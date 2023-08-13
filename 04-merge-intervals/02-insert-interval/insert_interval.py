@@ -1,5 +1,16 @@
 def insert_interval(existing_intervals, new_interval):
-    # Replace this placeholder return statement with your code
+    new_schedule = []
+    interval_index = 0
+
+    # search for place to put new interval
+    while interval_index < len(existing_intervals) and not new_interval.start > existing_intervals[interval_index]:
+        new_schedule.append(existing_intervals[interval_index])
+        interval_index += 1
+
+    # check for overlap with last interval
+
+    # check for overlap with
+
 
     return []
 
