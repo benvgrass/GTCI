@@ -2,6 +2,7 @@ import pytest
 from intersections import intervals_intersection
 from n04_merge_intervals.interval import make_interval_list, unpack_interval_list
 
+
 @pytest.mark.parametrize("a,b,expected", [
     ([[1, 4], [5, 6], [7, 8], [9, 15]],
      [[2, 4], [5, 7], [9, 15]],
