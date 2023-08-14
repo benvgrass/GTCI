@@ -1,4 +1,4 @@
-from ..interval import Interval
+from n04_merge_intervals.interval import Interval
 
 
 def intervals_intersection(interval_list_a, interval_list_b):
