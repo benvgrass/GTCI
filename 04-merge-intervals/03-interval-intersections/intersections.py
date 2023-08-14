@@ -4,6 +4,22 @@ def intervals_intersection(interval_list_a, interval_list_b):
     return []
 
 
+def get_intersection(interval_a, interval_b):
+    """
+    get_intersection calculates the intersection between two intervals
+
+    :param interval_a: first interval
+    :param interval_b: second interval
+    :return: intersecting interval of interval_a and interval_b or None if no intersection
+    """
+    if (interval_b.start <= interval_a.start <= interval_b.end or
+            interval_a.start <= interval_b.start <= interval_a.end):
+        return Interval(max(interval_a.start, interval_b.start),
+                        min(interval_a.end, interval_b.end))
+
+    return None
+
+
 class Interval:
     def __init__(self, start, end):
         self.start = start
