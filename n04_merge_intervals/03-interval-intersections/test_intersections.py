@@ -1,6 +1,5 @@
 import pytest
-from intersections import intervals_intersection, Interval
-
+from intersections import intervals_intersection
 
 @pytest.mark.parametrize("a,b,expected", [
     ([[1, 4], [5, 6], [7, 8], [9, 15]],
@@ -24,11 +23,3 @@ def test_intervals_intersection(a, b, expected):
     assert unpack_interval_list(
         intervals_intersection(make_interval_list(a),
                                make_interval_list(b))) == expected
-
-
-def make_interval_list(l):
-    return [Interval(x[0], x[1]) for x in l]
-
-
-def unpack_interval_list(l):
-    return [[x.start, x.end] for x in l]
