@@ -29,10 +29,11 @@ def get_intersection(interval_a, interval_b):
     :param interval_b: second interval
     :return: intersecting interval of interval_a and interval_b or None if no intersection
     """
-    if (interval_b.start <= interval_a.start <= interval_b.end or
-            interval_a.start <= interval_b.start <= interval_a.end):
-        return Interval(max(interval_a.start, interval_b.start),
-                        min(interval_a.end, interval_b.end))
+    start = max(interval_a.start, interval_b.start)
+    end = min(interval_a.end, interval_b.end)
+
+    if start <= end:
+        return Interval(start, end)
 
     return None
 
