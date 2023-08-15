@@ -13,5 +13,8 @@ import pytest
 def test_reverse_k_groups(lst, k, expected):
     ll = LinkedList()
     ll.create_linked_list(lst)
-    result = linked_list_to_list(reverse_k_groups(ll.head, k))
-    assert result == expected
+    result_node = reverse_k_groups(ll.head, k)
+    result_ll = LinkedList()
+    result_ll.insert_node_at_head(result_node)
+    result_lst = linked_list_to_list(result_ll)
+    assert result_lst == expected

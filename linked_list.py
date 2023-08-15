@@ -43,3 +43,5 @@ def linked_list_to_list(linked_list: LinkedList):
     while head:
         result.append(head.data)
         head = head.next
+
+    return result
