@@ -2,7 +2,7 @@ from linked_list import LinkedList
 from linked_list_node import LinkedListNode
 
 
-def reverse(head):
+def reverse_linked_list(head):
     previous = None
     current = head
     while current:

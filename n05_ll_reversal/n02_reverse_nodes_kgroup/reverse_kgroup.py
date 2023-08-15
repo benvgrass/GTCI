@@ -1,4 +1,4 @@
-from n05_ll_reversal.n01_reverse_list.reverse_list import reverse
+from n05_ll_reversal.n01_reverse_list.reverse_list import reverse_linked_list
 
 
 def reverse_k_groups(head, k):
@@ -6,7 +6,7 @@ def reverse_k_groups(head, k):
     if new_group_head:
         next_group = new_group_head.next
         new_group_head.next = None
-        reverse(head)
+        reverse_linked_list(head)
         head.next = reverse_k_groups(next_group, k)
         return new_group_head
     return head
