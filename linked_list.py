@@ -36,6 +36,9 @@ class LinkedList:
             new_node = LinkedListNode(x)
             self.insert_node_at_head(new_node)
 
+    def to_list(self):
+        return linked_list_to_list(self)
+
     # __str__(self) method will display the elements of linked list.
     def __str__(self):
         result = ""
