@@ -19,7 +19,7 @@ def reorder_list(head):
     head_2 = reverse_linked_list(mid_point)
 
     # merge both sides
-    while head_1:
+    while head_2:
         next_head_1 = head_1.next
         next_head_2 = head_2.next
         head_2.next = next_head_1
