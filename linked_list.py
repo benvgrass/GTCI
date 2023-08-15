@@ -35,3 +35,10 @@ class LinkedList:
                 result += ", "
         result += ""
         return result
+
+
+def linked_list_to_list(linked_list: LinkedList):
+    head = linked_list.head
+    result = []
+    while head:
+        result.append(head.data)
