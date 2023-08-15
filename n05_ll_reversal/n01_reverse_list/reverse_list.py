@@ -6,8 +6,9 @@ def reverse(head):
     previous = None
     current = head
     while current:
+        next_node = current.next
         current.next = previous
         previous = current
-        current = current.next
+        current = next_node
 
-    return current
+    return previous
