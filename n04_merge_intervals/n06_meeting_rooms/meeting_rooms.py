@@ -3,9 +3,10 @@ from heapq import heapreplace, heappush
 
 
 def find_sets(intervals: list[Interval]):
-
     intervals.sort(key=lambda i: i.start, reverse=True)  # sort intervals by start time
-    meeting_rooms = [intervals.pop()]
+
+    # meeting rooms will be a heap where each item is an occupied room represented by its ending time
+    meeting_rooms = [intervals.pop().end]  # initialize first meeting room with first item
 
     #  iterate while intervals remain in list
     while intervals:
