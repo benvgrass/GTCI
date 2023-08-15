@@ -8,6 +8,18 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+    @classmethod
+    def from_node(cls, node: LinkedListNode):
+        new_list = cls()
+        new_list.insert_node_at_head(node)
+        return new_list
+
+    @classmethod
+    def from_list(cls, lst: list):
+        new_list = cls()
+        new_list.create_linked_list(lst)
+        return new_list
+
     # insert_node_at_head method will insert a LinkedListNode at
     # head of a linked list.
     def insert_node_at_head(self, node):
