@@ -14,6 +14,6 @@ def reverse_between(head, left, right):
         pause_node = traverse_to_depth_k(head, left - 1)
         pause_node.next = right_node
     else:
-        head = right
+        head = right_node
 
     return head
