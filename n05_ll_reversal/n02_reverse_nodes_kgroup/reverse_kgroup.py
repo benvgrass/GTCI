@@ -2,7 +2,7 @@ from n05_ll_reversal.n01_reverse_list.reverse_list import reverse_linked_list
 
 
 def reverse_k_groups(head, k):
-    new_group_head = traverse_depth(head, k)
+    new_group_head = traverse_to_depth_k(head, k)
     if new_group_head:
         next_group = new_group_head.next
         new_group_head.next = None
@@ -12,7 +12,7 @@ def reverse_k_groups(head, k):
     return head
 
 
-def traverse_depth(head, k):
+def traverse_to_depth_k(head, k):
     new_head = head
     count = 1
     while count < k and new_head:
