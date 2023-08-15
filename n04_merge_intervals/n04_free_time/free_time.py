@@ -17,7 +17,7 @@ def employee_free_time(schedule):
             employee_interval = employee_times.pop(0)
             start = employee_interval.start
             end = employee_interval.end
-            heappush(interval_heap, (start, end, i))
+            heappush(interval_heap, (start, end, employee_index))
 
     # initialize heap with first interval for each employee
     for i in range(len(schedule)):
